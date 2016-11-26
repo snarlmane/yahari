@@ -22,14 +22,18 @@ and open the template in the editor.
     <body>
         <div class="container">
         <?php
-        
+       /* include 'fileOPs.php';
+        $file = new SplFileObject('genuine.txt');    
+        readStart($file); 
+        */
+       
             $src = "";
             $img = "";
             $off = 17;
-            $handle = fopen("genuine.txt", "r");
-            $file = new SplFileObject('genuine.txt');            
+            $handle = fopen("symbols.txt", "r");
+            $file = new SplFileObject('symbols.txt');            
             $ctr = 0;
-            $end = 105;
+            $end = 151;
             if ($handle) {
                 $file->seek($ctr);
                 while (!$file->eof() && $ctr < $end) {
@@ -56,7 +60,7 @@ and open the template in the editor.
                         $src = substr($line,32);
                         echo "<iframe src=\"http://www.youtube.com/embed/".$src."\" width=\"560\" height=\"315\" frameborder=\"0\" allowfullscreen></iframe><br>";
                       }else{
-                          echo "<a src=\"".$line."\">".$line."</a>";
+                          echo "<a src=\"".$line."\">".$line."</a><br>";
                       } 
                    }else{
                        $ctr++;
@@ -101,7 +105,7 @@ and open the template in the editor.
                         } else {
                 // error opening the file.
             }
-            echo $ctr
+            echo $ctr;
         ?>
         </div>
     </body>
