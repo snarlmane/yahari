@@ -5,8 +5,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-function readStart($file){
-    
+function readStart($file){   
     for($ctr = 0,$file->seek($ctr),$end = $ctr+40;!$file->eof() && $ctr < $end;) {
        $line = $file->current();
        if((strstr($line, "----")) == false){
@@ -49,7 +48,7 @@ function resolveLink($line){
         $src = substr($line,32);
         echo "<iframe src=\"http://www.youtube.com/embed/".$src."\" width=\"560\" height=\"315\" frameborder=\"0\" allowfullscreen></iframe><br>";
       }else{
-          echo "<a src=\"".$line."\">".$line."</a>";
+          echo "<a href=\"".$line."\">".$line."</a>";
       } 
 }
 function printLine($line){

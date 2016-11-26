@@ -18,15 +18,11 @@ body{
     display: none;
     color: blue;
 }
-blockquote{
-    height: 1500px;
-}
 .picCont{
-    text-align: center;
+    position:fixed;
+    display:none;
 }
-iframe{
-    margin-left: 20%;
-}
+
 #content{
     margin-left: 200px;
 }

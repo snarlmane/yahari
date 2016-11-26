@@ -14,9 +14,10 @@ and open the template in the editor.
         <script>
             $(document).ready(function(){
                 $(".show").click(function (){
-                   $(this).next().toggle(); 
+                    $(this).next().slideToggle(); 
                 });
             });
+             
         </script>
     </head>
     <body>
@@ -30,10 +31,10 @@ and open the template in the editor.
             $src = "";
             $img = "";
             $off = 17;
-            $handle = fopen("symbols.txt", "r");
-            $file = new SplFileObject('symbols.txt');            
+            $handle = fopen("part1.txt", "r");
+            $file = new SplFileObject('part1.txt');            
             $ctr = 0;
-            $end = 151;
+            $end = 388;
             if ($handle) {
                 $file->seek($ctr);
                 while (!$file->eof() && $ctr < $end) {
@@ -52,7 +53,7 @@ and open the template in the editor.
                             $img = trim(substr($line,17));
                             $src = trim(substr($line,$off));
                         }
-                        echo "<div class=\"picCont\"><blockquote class=\"imgur-embed-pub\" lang=\"en\""
+                        echo "<button class=\"show\">PIC</button><div class=\"picCont container-fluid\"><blockquote class=\"imgur-embed-pub\" lang=\"en\""
                         . " data-id=\"".$img."\"><a href=\"//imgur.com/".$src."\""
                         . "></a></blockquote><script async src=\"//s.imgur.com/min/embed.js\" "
                         . "charset=\"utf-8\"></script><br></div>";
@@ -60,7 +61,7 @@ and open the template in the editor.
                         $src = substr($line,32);
                         echo "<iframe src=\"http://www.youtube.com/embed/".$src."\" width=\"560\" height=\"315\" frameborder=\"0\" allowfullscreen></iframe><br>";
                       }else{
-                          echo "<a src=\"".$line."\">".$line."</a><br>";
+                          echo "<a href=\"".$line."\">".$line."</a><br>";
                       } 
                    }else{
                        $ctr++;
@@ -112,8 +113,3 @@ and open the template in the editor.
 
 
 </html>
-<!--
-<blockquote class="imgur-embed-pub" lang="en" data-id="BeBBHIi">
-<a href="//imgur.com/BeBBHIi"></a></blockquote>
-<script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
--->
