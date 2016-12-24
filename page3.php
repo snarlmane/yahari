@@ -32,7 +32,7 @@ and open the template in the editor.
             $src = "";
             $img = "";
             $off = 17;
-            $file = new SplFileObject('part1.txt');            
+            $file = new SplFileObject('part1-3.txt');            
             $ctr = 0;
             $end = 388;
             $line = $file->current();
@@ -59,8 +59,8 @@ and open the template in the editor.
                     $src = substr($line,32);
                     echo "<div class=\"picCont container-fluid\">"
                     . "<iframe src=\"http://www.youtube.com/embed/".$src."\" width=\"560\" height=\"315\""
-                            . " frameborder=\"0\" allowfullscreen></iframe><br></div>";
-                  }else{
+                    . " frameborder=\"0\" allowfullscreen></iframe><br></div>";
+                }else{
                       echo "<a href=\"".$line."\">".$line."</a><br>";
                   } 
                }else{
@@ -82,9 +82,9 @@ and open the template in the editor.
                   </div>
                 <div class="col-md-12 text-center">
                     <ul class="pagination">
-                      <li  class="active" ><a href="index.php">1</a></li>
+                      <li><a href="index.php">1</a></li>
                       <li><a href="page2.php">2</a></li>
-                      <li><a href="page3.php">3</a></li>
+                      <li   class="active" ><a href="page3.php">3</a></li>
                     </ul>
                 </div>
             </div>

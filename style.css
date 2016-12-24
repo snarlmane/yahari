@@ -19,10 +19,8 @@ body{
     color: blue;
 }
 .picCont{
-    position:fixed;
-    display:none;
+    text-align: center;
 }
-
 #content{
     margin-left: 200px;
 }
